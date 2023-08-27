@@ -2,19 +2,15 @@ FROM node:latest
 
 WORKDIR /app/medusa
 
-COPY package.json .
+COPY . .
 
 RUN apt-get update
 
-RUN apt-get install -y  python-is-python3
+RUN apt-get install -y python-is-python3
 
 RUN npm install -g npm@latest   
 
-RUN npm install -g @medusajs/medusa-cli@latest
-
 RUN npm install --loglevel=error
-
-COPY . .
 
 ENTRYPOINT ["./develop.sh", "develop"]
     
