@@ -1,0 +1,13 @@
+FROM node:latest
+
+WORKDIR /app/storefront
+
+COPY . .
+
+RUN apt-get update
+
+RUN npm install -g npm@latest
+
+RUN npm install --loglevel=error
+
+ENTRYPOINT ["next", "start", "-p", "8000" ]
