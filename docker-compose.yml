@@ -5,17 +5,23 @@ services:
       context: ./backend
       dockerfile: Dockerfile
     image: backend:test
-    container_name: medusa-server
+    container_name: server
     depends_on:
       - postgres
       - redis
     environment:
       DATABASE_URL: postgres://postgres:postgres@postgres:5432/medusa-docker
+      DATABASE_TYPE: postgres
       REDIS_URL: redis://cache
       NODE_ENV: development
       JWT_SECRET: some_jwt_secret
       COOKIE_SECRET: some_cookie_secret
       PORT: 9000
+    ports:
+      - 9000:9000
+      - 7001:7001 
+    expose:
+      - 9000
 
   postgres:
     image: postgres:10.4
@@ -25,6 +31,8 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: medusa-docker
+    expose:
+      - 5432
 
   redis:
     image: redis
@@ -32,11 +40,13 @@ services:
     expose:
       - 6379
 
-  storefront:
-    build:
-      context: ./storefront
-      dockerfile: Dockerfile
-    image: storefront:test
-    container_name: medusa-storefront
-    depends_on:
-      - backend
+  # storefront:
+  #   build:
+  #     context: ./storefront
+  #     dockerfile: Dockerfile
+  #   image: storefront:test
+  #   container_name: storefront
+  #   depends_on:
+  #     - backend
+  #   ports:
+  #     - 8000:8000

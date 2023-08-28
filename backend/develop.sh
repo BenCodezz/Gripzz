@@ -1,5 +1,5 @@
 #!/bin/bash
 
-medusa migrations run
+npx medusa migrations run
 
-medusa $1
+npx medusa $1

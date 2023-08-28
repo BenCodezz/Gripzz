@@ -10,4 +10,6 @@ RUN npm install -g npm@latest
 
 RUN npm install --loglevel=error
 
-ENTRYPOINT ["next", "start", "-p", "8000" ]
+RUN npm run build
+
+ENTRYPOINT ["npm", "run", "start" ]

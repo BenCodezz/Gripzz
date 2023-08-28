@@ -9,12 +9,12 @@ services:
     ports:
       - "9000:9000"
 
-  storefront:
-    volumes:
-      - ./storefront:/app/storefront
-      - storefront_node_modules:/app/storefront/node_modules
-    ports:
-      - "8000:8000"
+  # storefront:
+  #   volumes:
+  #     - ./storefront:/app/storefront
+  #     - storefront_node_modules:/app/storefront/node_modules
+  #   ports:
+  #     - "8000:8000"
 
 volumes:
   storefront_node_modules:
