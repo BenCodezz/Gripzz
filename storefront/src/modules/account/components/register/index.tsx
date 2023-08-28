@@ -4,7 +4,7 @@ import Button from "@modules/common/components/button"
 import Input from "@modules/common/components/input"
 import Spinner from "@modules/common/icons/spinner"
 import Link from "next/link"
-import { useRouter } from "next/router"
+import { useRouter } from "next/navigation"
 import { useState } from "react"
 import { FieldValues, useForm } from "react-hook-form"
 
@@ -49,9 +49,9 @@ const Register = () => {
           <Spinner size={24} />
         </div>
       )}
-      <h1 className="text-large-semi uppercase mb-6">Become a Gripzz Member</h1>
+      <h1 className="text-large-semi uppercase mb-6">Become a Acme Member</h1>
       <p className="text-center text-base-regular text-gray-700 mb-4">
-        Create your Gripzz Member profile, and get access to an enhanced shopping
+        Create your Acme Member profile, and get access to an enhanced shopping
         experience.
       </p>
       <form className="w-full flex flex-col" onSubmit={onSubmit}>
@@ -98,13 +98,13 @@ const Register = () => {
           </div>
         )}
         <span className="text-center text-gray-700 text-small-regular mt-6">
-          By creating an account, you agree to Gripzz&apos;s{" "}
-          <Link href="/content/privacy-policy">
-            <a className="underline">Privacy Policy</a>
+          By creating an account, you agree to Acme&apos;s{" "}
+          <Link href="/content/privacy-policy" className="underline">
+            Privacy Policy
           </Link>{" "}
           and{" "}
-          <Link href="/content/terms-of-use">
-            <a className="underline">Terms of Use</a>
+          <Link href="/content/terms-of-use" className="underline">
+            Terms of Use
           </Link>
           .
         </span>

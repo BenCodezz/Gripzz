@@ -8,7 +8,7 @@ const FooterCTA = () => {
         <div>
           <h3 className="text-2xl-semi">Shop the latest styles</h3>
           <div className="mt-6">
-            <UnderlineLink href="/store"> See Griptape</UnderlineLink>
+            <UnderlineLink href="/store">Explore products</UnderlineLink>
           </div>
         </div>
 
@@ -16,9 +16,12 @@ const FooterCTA = () => {
           <Image
             src="/cta_three.jpg"
             alt=""
-            layout="fill"
-            objectFit="cover"
             className="absolute inset-0"
+            fill
+            sizes="100vw"
+            style={{
+              objectFit: "cover",
+            }}
           />
         </div>
       </div>
