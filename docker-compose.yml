@@ -71,3 +71,4 @@ services:
       - 8000:8000
     environment:
       NEXT_PUBLIC_MEDUSA_BACKEND_URL: http://backend.myhost.local
+      NEXT_PUBLIC_BASE_URL: http://backend.myhost.local
